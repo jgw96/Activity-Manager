@@ -1,0 +1,18 @@
+<ul class="list-group">
+    <li class="list-group-item">
+        <h4>Hostname: {{hostname}}</h4>
+        <h4>Platform: {{platform}}</h4>
+        <h4>Version: {{release}}</h4>
+    </li>
+    <li class="list-group-item">
+        <h4>Memory Info - </h4>
+        <p>Free Memory: {{freeMem | byteToMb}}mb</p>
+        <p>Total Memory: {{totalMem | byteToMb}}mb</p>
+    </li>
+    <li class="list-group-item">
+        <h4>CPU Info -</h4>
+        <p>Architecture: {{archName}}</p>
+        <p># of Cores: {{cpuData.length}}</p>
+        <p>Model: {{cpuData[0].model}}</p>
+    </li>
+</ul>

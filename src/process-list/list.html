@@ -1,0 +1,9 @@
+<ul class="list-group">
+    <li *ngFor="let process of runningProcesses" class="list-group-item">
+        <p>{{process.name}}</p>
+        <p>PID: {{process.pid}}</p>
+        <p>CPU Usage: {{process.cpu | percent}}</p>
+        <p>Memory Usage: {{process.mem.usage | percent}}</p>
+        <button (click)="stop(process.pid)" class="btn btn-mini btn-warning">Stop</button>
+    </li>
+</ul>
