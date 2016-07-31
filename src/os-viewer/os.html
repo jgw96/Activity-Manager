@@ -1,18 +1,27 @@
-<ul class="list-group">
-    <li class="list-group-item">
-        <h4>Hostname: {{hostname}}</h4>
-        <h4>Platform: {{platform}}</h4>
-        <h4>Version: {{release}}</h4>
-    </li>
-    <li class="list-group-item">
-        <h4>Memory Info - </h4>
-        <p>Free Memory: {{freeMem | byteToMb}}mb</p>
-        <p>Total Memory: {{totalMem | byteToMb}}mb</p>
-    </li>
-    <li class="list-group-item">
-        <h4>CPU Info -</h4>
-        <p>Architecture: {{archName}}</p>
-        <p># of Cores: {{cpuData.length}}</p>
-        <p>Model: {{cpuData[0].model}}</p>
-    </li>
-</ul>
+<md-list>
+    <md-card class="list-group-item">
+        <md-card-title>System Info</md-card-title>
+        <md-card-content>
+            <p>Hostname: {{hostname}}</p>
+            <p>Platform: {{platform}}</p>
+            <p>Version: {{release}}</p>
+        </md-card-content>
+    </md-card>
+
+    <md-card class="list-group-item">
+        <md-card-title>Memory Info</md-card-title>
+        <md-card-content>
+            <p>Free Memory: {{freeMem | byteToMb}}mb</p>
+            <p>Total Memory: {{totalMem | byteToMb}}mb</p>
+        </md-card-content>
+    </md-card>
+
+    <md-card id="lastCard" class="list-group-item">
+        <md-card-title>CPU Info</md-card-title>
+        <md-card-content>
+            <p>Architecture: {{archName}}</p>
+            <p># of Cores: {{cpuData.length}}</p>
+            <p>Model: {{cpuData[0].model}}</p>
+        </md-card-content>
+    </md-card>
+</md-list>

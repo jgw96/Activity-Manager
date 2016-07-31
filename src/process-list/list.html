@@ -1,9 +1,11 @@
-<ul class="list-group">
-    <li *ngFor="let process of runningProcesses" class="list-group-item">
-        <p>{{process.name}}</p>
-        <p>PID: {{process.pid}}</p>
-        <p>CPU Usage: {{process.cpu | percent}}</p>
-        <p>Memory Usage: {{process.mem.usage | percent}}</p>
-        <button (click)="stop(process.pid)" class="btn btn-mini btn-warning">Stop</button>
-    </li>
-</ul>
+<md-list>
+    <md-card *ngFor="let process of runningProcesses" class="list-group-item">
+        <md-card-title>{{process.name}}</md-card-title>
+        <md-card-content>
+            <p>PID: {{process.pid}}</p>
+            <p>CPU Usage: {{process.cpu | percent}}</p>
+            <p>Memory Usage: {{process.mem.usage | percent}}</p>
+            <button color="primary" md-button (click)="stop(process.pid)">STOP</button>
+        </md-card-content>
+    </md-card>
+</md-list>

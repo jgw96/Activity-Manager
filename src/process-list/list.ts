@@ -1,12 +1,17 @@
 import { Component, NgZone } from '@angular/core';
 
+import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
+import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
+import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
+
 const ps = require('current-processes');
 const ps_lookup = require('ps-node');
 
 @Component({
     selector: 'process-list',
     template: require('./list.html'),
-    styles: [require('./list.css')]
+    styles: [require('./list.css')],
+    directives: [MD_LIST_DIRECTIVES, MD_CARD_DIRECTIVES, MD_BUTTON_DIRECTIVES]
 })
 export class ProcessList {
 

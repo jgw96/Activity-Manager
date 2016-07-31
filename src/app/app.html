@@ -1,8 +1,18 @@
-<div class="pane-group">
-    <div id="processList" class="pane-sm">
-        <process-list></process-list>
-    </div>
-    <div class="pane">
-        <os-viewer></os-viewer>
-    </div>
-</div>
+<md-toolbar color="primary">
+  <span>Activity Manager</span>
+</md-toolbar>
+
+<md-tab-group color="primary">
+  <md-tab>
+    <template md-tab-label>Processes</template>
+    <template md-tab-content>
+      <process-list></process-list>
+    </template>
+  </md-tab>
+  <md-tab>
+    <template md-tab-label>System Stats</template>
+    <template md-tab-content>
+      <os-viewer></os-viewer>
+    </template>
+  </md-tab>
+</md-tab-group>

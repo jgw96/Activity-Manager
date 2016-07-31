@@ -1,6 +1,9 @@
 import { bootstrap } from '@angular/platform-browser-dynamic';
 import { Component } from '@angular/core';
 
+import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
+import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
+
 import { ByteToMb } from '../pipes/byteToMb';
 
 const os = require('os');
@@ -9,7 +12,8 @@ const os = require('os');
   selector: 'os-viewer',
   template: require('./os.html'),
   styles: [require('./os.css')],
-  pipes: [ByteToMb]
+  pipes: [ByteToMb],
+  directives: [MD_CARD_DIRECTIVES, MD_LIST_DIRECTIVES]
 })
 
 export class OsViewer {
@@ -22,11 +26,10 @@ export class OsViewer {
   platform: string;
   hostname: string;
   cpuData: any;
-  cpuTemp: string;
- 
+
 
   constructor() {
-    
+
   }
 
   ngOnInit() {
@@ -38,9 +41,5 @@ export class OsViewer {
     this.platform = os.platform();
     this.hostname = os.hostname();
     this.cpuData = os.cpus();
-
-    setInterval(() => {
-      this.freeMem = os.freemem();
-    }, 5000);
   }
 }

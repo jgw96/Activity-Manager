@@ -1,0 +1,15 @@
+md-card {
+    margin-left: 8rem;
+    margin-right: 8rem;
+    margin-top: 2rem;
+}
+
+md-list {
+    background-color: #ececec;
+    padding-bottom: 2rem;
+}
+
+button {
+    position: relative;
+    left: 80%;
+}
